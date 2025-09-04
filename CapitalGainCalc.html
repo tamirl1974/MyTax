@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapitalGainCalc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #f7fafc;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transform: translateY(-2px);
+        }
+        .rtl-input::placeholder {
+            text-align: right;
+        }
+        details > summary {
+            cursor: pointer;
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] .arrow-down {
+            transform: rotate(180deg);
+        }
+        .arrow-down {
+            transition: transform 0.2s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-5xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-800">מס יסף 2025: מחשבון לעובד</h1>
+            <p class="mt-4 text-lg text-gray-600">כל מה שצריך לדעת על השינויים, באחריות שלכם ואיך להיערך נכון - בפשטות ובבהירות.</p>
+        </header>
+
+        <main class="space-y-8">
+            <!-- Main Change Section -->
+            <div class="card p-6">
+                <h2 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 ml-3 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      מה השינוי המרכזי?
+                </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    החל מינואר 2025, האחריות לתשלום <strong>מס יסף על רווחי הון</strong> (כמו רווחים ממכירת מניות) עוברת אליכם, העובדים. החברה תמשיך לנכות מס יסף על הכנסות פירותיות (שכר וכו') בתלוש, אך את מס היסף על רווחי ההון יהיה עליכם להעביר ישירות לרשות המיסים.
+                </p>
+            </div>
+
+            <!-- Infographic Section -->
+            <div class="card p-6">
+                <h2 class="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 ml-3 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                    מה חשוב לדעת? מס יסף ב-2 דקות
+                </h2>
+                <div class="text-center mb-4 p-4 bg-gray-100 rounded-lg">
+                    <p class="text-lg text-gray-700">תקרת ההכנסה החייבת במס יסף לשנת 2025:</p>
+                    <p class="text-3xl font-bold text-blue-800">₪721,560</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <h3 class="font-bold text-lg text-gray-800">מס יסף רגיל: <span class="text-blue-600">3%</span></h3>
+                        <p class="mt-2 text-gray-600"><strong>על מה?</strong> חל כאשר <span class="font-semibold">כלל ההכנסות</span> (שכר + פירותי + הוני) עוברות את התקרה.</p>
+                        <p class="mt-2 text-gray-600"><strong>מי משלם?</strong> <br>
+                            - <span class="font-semibold">החברה:</span> על שכר ורווח פירותי.<br>
+                            - <span class="font-semibold">העובד:</span> על רווחי הון.
+                        </p>
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-lg">
+                        <h3 class="font-bold text-lg text-gray-800">מס יסף הוני נוסף: <span class="text-blue-600">2%</span></h3>
+                        <p class="mt-2 text-gray-600"><strong>על מה?</strong> חל <span class="font-semibold">רק אם ההכנסה ההונית</span> בפני עצמה עוברת את התקרה.</p>
+                        <p class="mt-2 text-gray-600"><strong>מי משלם?</strong> <br>
+                            - <span class="font-semibold">העובד:</span> על רווחי הון.
+                        </p>
+                    </div>
+                </div>
+            </div>
+<!-- Recommendations Section -->
+            <div class="text-center card p-6 border-l-4 border-yellow-400  bg-red-100" >
+                <h2 class="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 ml-3 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                   אל תחכו לרגע האחרון:  
+                </h2>
+                <ul class="text-center space-y-3 text-gray-700 ">
+                    <li class="flex items-center"><span class="font-bold text-blue-600 ml-2"></span><strong> פנו כבר עכשיו לרו"ח או ליועץ מס, בדקו את מצבכם, הסדירו את מקדמות תשלום המס והיערכו להגשת הדו"ח השנתי במועד. </strong></li>
+                                  
+                </ul>
+            </div>
+
+            <!-- Calculator Section -->
+            <div class="card p-6">
+                <h2 class="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 ml-3 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                    מחשבון מס יסף אישי (הערכה בלבד)
+                </h2>
+
+ <p class="text-gray-600 ml-2" ;">הכנו עבורכם מחשבון שיסייע לכם לקבל <strong>הערכה</strong> לגבי מצבכם האישי.
+ </p> 
+
+ <p class="text-right text-gray-600 ml-2" style="color: #dc3545;">המידע המוצג הוא לצורכי הערכה כללית בלבד ואינו מהווה תחליף לייעוץ מס מקצועי. <br></p> <br>
+                <p class="text-gray-600 mb-4">הזינו ארבעה נתונים מתלוש השכר האחרון שברשותכם:</p>
+                <div class="grid md:grid-cols-4 gap-4 mb-4">
+                    <div>
+			<label for="salary1" class="block text-sm font-medium text-gray-700">הכנסה חייבת במס</label>
+                        <input type="text" id="salary1" value = "1,207,266" class="mt-1 block w-30 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 rtl-input" 			placeholder="לדוגמה: 1,207,266" oninput="formatNumberInput(this)" > </div>
+ 		     <div>
+		     	<label for="salary2" class="block text-sm font-medium text-gray-700">שכר חייב ב.ל.</label>
+                        <input type="text" id="salary2" value = "607,266" class="mt-1 block w-30 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 rtl-input" 				placeholder="לדוגמה: 607,266" oninput="formatNumberInput(this)" > </div>
+ 		    <div>
+			<label for="salary3" class="block text-sm font-medium text-gray-700">ברוטו רגיל</label>
+                        <input type="text" id="salary3" value = "304,425" class="mt-1 block w-30 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 rtl-input" 				placeholder="לדוגמה: 304,425" oninput="formatNumberInput(this)" > </div>
+ 		<div>
+			<label for="salary4" class="block text-sm font-medium text-gray-700">חודש התלוש<small> (לדוגמא: 8 לתלוש אוגוסט)</small></label>
+                        <input type="number" id="salary4" value = "8" class="mt-1 block w-30 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 rtl-input" 				placeholder="לדוגמה: 8">
+			</div>
+<div>
+
+
+
+ 
+
+
+
+ <div> </div>
+
+  </div>
+                   
+                </div>
+
+                <div class="text-center">
+                    <button onclick="calculateTax()" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                        חשב
+                    </button>
+                </div>
+<!-- Explain -->
+                    <details class="bg-gray-50 p-4 rounded-lg">
+                        <summary class="font-semibold text-lg flex justify-between items-center">
+                            היכן ניתן למצוא את הנתונים בתלוש השכר, ומהי המשמעות של כל אחד מהם?
+                            <svg class="w-5 h-5 text-gray-500 arrow-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </summary>
+<div style="display: flex; gap: 20px; justify-content: center;">
+    <div>
+        <img src="https://nvidia.sharepoint.com/:i:/r/sites/ILPayrolIT/Shared%20Documents/CapitalGain/Example.png?csf=1&web=1&e=B9hLlg" alt="שכר"   style="width: 200px;" />
+    </div>
+    <div>
+        <img src="https://nvidia.sharepoint.com/:i:/r/sites/ILPayrolIT/Shared%20Documents/CapitalGain/ExampleFull.png?csf=1&web=1&e=RM3pWh" alt="תלוש"    style="width: 200px;" />
+    </div>
+</div>
+                        <div class="mt-3 pt-3 border-t">
+                            <p><strong>הכנסה חייבת במס:</strong>  סך כל ההכנסות המצטברות מתחילת שנה עד חודש התלוש - שכר, רווח פירותי והוני ממכירת ממניות.</p>
+                            <p><strong>שכר חייב ב.ל.:</strong> סך הכנסה חייבת במס ללא רכיב הרווח ההוני ממניות (שפטור מדמי ביטוח לאומי), מצטבר מתחילת שנה לחודש התלוש.</p>
+                            <p><strong>ברוטו רגיל:</strong> רכיבי שכר מצטברים חודשיים (מתחילת שנה לחודש התלוש) כמו שכר בסיס, נסיעות, ארוחות, קרן השתלמות מעל תקרה ועוד.</p>
+                            <p><strong>חודש התלוש:</strong> החודש בגינו התקבל השכר (תלוש משכורת של חודש אוגוסט = 8).</p>
+                        
+
+
+                             <div class="mt-2 p-2 bg-red-100 text-red-800 rounded">
+                    
+                                <ul class=" list-inside  mt-1">
+				<li>  שימו לב, אם ביצעתם מכירה במהלך החודש החולף, ישנה סבירות גבוהה שהיא תשתקף רק בתלוש השכר של החודש הבא.</li>
+                                    <li>  החישוב כולל הערכה ל"ברוטו רגיל" עד סוף השנה, לפי המידע שהוזן ובהתאם לחודשים שנותרו. ככל שמתקרבים לסוף השנה הקלנדרית, ההערכה השנתית תהיה מדויקת יותר.</li>
+				  
+
+                                   
+                                </ul>
+                            
+                            </div>
+                        </div>
+                    </details>
+                </div>
+          
+
+		
+                <div id="results" style="display:none;" class="mt-6 p-4 border-t-2 border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-800 text-center mb-4">תוצאות (הערכה)</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        
+			<div class="bg-gray-100 p-4 rounded-lg text-center">
+                             <p class="text-gray-700">רווח הון:</p>
+                             <p id="capital" class="text-2xl font-bold "></p>
+                        </div>
+
+                        <div class="bg-red-100 p-4 rounded-lg text-center">
+                             <p class="text-gray-700">סה"כ מס יסף לתשלום עצמאי על העובד:</p>
+                             <p id="employeeTaxTotal" class="text-2xl font-bold "></p>
+                        </div>
+                    </div>
+                    <div id="employeeBreakdown" style="display:none;" class="mt-4 p-4 bg-gray-50 rounded-lg">
+                        <h4 class="font-semibold text-center mb-2">פירוט סך מס היסף (מס יסף רגיל+מס יסף הוני נוסף) לתשלום על ידי העובד:</h4>
+                        <ul class="list-disc list-inside text-center space-y-1">
+                            <li>מס יסף רגיל על רווחי הון (3%): <span id="employeeTax3" class="font-bold"></span> </li> 
+				<p class="text-gray-500"><span id="CapitalGain28A" ></span>*3%</p> 
+
+                            <li>מס יסף הוני נוסף (2%): <span id="employeeTax2" class="font-bold"></span></li>
+				<p class="text-gray-500"><span id="CapitalGain30" ></span>*2%</p> 
+                        </ul>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-4" style="color: #dc3545;"><strong>זוהי הערכה בלבד. חישוב זה אינו מהווה תחליף לייעוץ מס מקצועי.</strong></p>
+                </div>
+            </div>
+           
+ 		<div>
+
+           
+            
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-10 pt-1 text-lg border-t border-gray-200">
+            <p class="text-gray-1500"><Strong>זכרו, היערכות מוקדמת תמנע הפתעות ותחסוך לכם כסף.</strong></p>
+            <p class="text-gray-1400 mt-2"><Strong>לשאלות נוספות, אתם מוזמנים לפנות למחלקת השכר.</strong></p>
+        </footer>
+    </div>
+
+    <script>
+
+        // JavaScript for the calculator
+
+    function formatNumberInput(input) {
+      const raw = input.value.replace(/,/g, '').replace(/[^\d.]/g, '');
+      if (raw === '') {
+        input.value = '';
+        return;
+      }
+      input.value = Number(raw).toLocaleString('he-IL');
+    }
+
+    function getNumericValue(id) {
+      const val = document.getElementById(id).value;
+      return Number(val.replace(/,/g, '').replace(/[^\d.]/g, '')) || 0;
+    }
+
+    function checkThreshold() {
+      const checkbox = document.getElementById('aboveThreshold');
+      const input = document.getElementById('last12Income');
+      const threshold = 50645 * 12;
+
+      if (checkbox.checked) {
+        input.value = threshold.toLocaleString('he-IL');
+        input.disabled = true;
+      } else {
+        input.disabled = false;
+      }
+    }
+
+        function calculateTax() {
+	     
+            const TIKRA = 721560;
+            const salary1 = getNumericValue('salary1');
+            const salary2 = getNumericValue('salary2');
+            const salary3 = getNumericValue('salary3');
+            const salary4 = getNumericValue('salary4');
+            const salary5 = 0;
+            const fruity = 0;
+            const capital = salary1-salary2;
+
+let salary = 0 ,salaryfut = 0;
+
+if (salary5 === 0) {
+  salary = (12 - salary4) * (salary3 / salary4) + salary2;
+  totalFruityIncome = salary ;
+  totalOverallIncome = totalFruityIncome + capital;
+  salaryfut = salary3 / salary4;
+
+
+} else {
+  salary = (12 - salary4) * salary5 + salary2;
+totalFruityIncome = salary ;
+  totalOverallIncome = totalFruityIncome + capital;
+  salaryfut = salary5;
+
+
+}
+        const CapitalGain25 = Math.min(capital , Math.max(TIKRA-salary,0));
+        const CapitalGain28 = Math.min(capital-CapitalGain25 , TIKRA-CapitalGain25);
+        const CapitalGain30 = Math.max(capital -CapitalGain28-CapitalGain25, 0);
+
+
+            // 1. Tax paid by the company on the "fruity" part
+            const companyTax = capital * 0.25;
+
+            // 2. Employee's 3% tax portion on the capital part
+	    const CapitalGain28A = CapitalGain28 +CapitalGain30;
+            const employeeTax3 = CapitalGain28A * 0.03;
+
+            // 3. Employee's 5% additional tax on capital income
+            const employeeTax2 = CapitalGain30 * 0.02;
+
+            // 4. Total tax for the employee to pay independently
+            const employeeTaxTotal = CapitalGain30*0.05+CapitalGain28*0.03;
+
+            // Function to format numbers as currency
+            const formatCurrency = (num) => '₪' + num.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+            // Display results
+           // document.getElementById('companyTax').textContent = formatCurrency(companyTax);
+            document.getElementById('employeeTaxTotal').textContent = formatCurrency(employeeTaxTotal);
+            //document.getElementById('salary').textContent = formatCurrency(salary);
+            document.getElementById('capital').textContent = formatCurrency(capital);  
+            //document.getElementById('salaryfut').textContent = formatCurrency(salaryfut);       
+
+
+           
+           const employeeBreakdown = document.getElementById('employeeBreakdown');
+            if(employeeTaxTotal > 0) {
+                document.getElementById('employeeTax3').textContent = formatCurrency(employeeTax3);
+               document.getElementById('employeeTax2').textContent = formatCurrency(employeeTax2);
+               document.getElementById('CapitalGain28A').textContent = formatCurrency(CapitalGain28A); 
+               document.getElementById('CapitalGain30').textContent = formatCurrency(CapitalGain30); 
+
+                employeeBreakdown.style.display = 'block';
+            } else {
+                employeeBreakdown.style.display = 'none';
+            }
+            
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
